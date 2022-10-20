@@ -1,5 +1,4 @@
-from tkinter import Variable
-
+from archivo1 import validacion_torre
 
 hanoi = [['TORRE1', 'TORRE2', 'TORRE3'], ['MENOR', 'VACIO', 'VACIO'], ['MEDIO', 'VACIO', 'VACIO'], ['MAYOR', 'VACIO', 'VACIO']]
 
@@ -14,7 +13,6 @@ for fila in range(4):
 
 
 # FUNCION MOVIMIENTO:
-
 
 def movimiento(disco,torre_destino):
     for columna in range(3):
@@ -33,15 +31,25 @@ def movimiento(disco,torre_destino):
                     break
                 else:
                     continue
-    for fila in range(4):
-        for columna in range(3):
-            print('{:<8}'.format(hanoi[fila][columna]), end= ' ')
-        print()
+    return hanoi
+
 
 
 
 while True:
     disco = input('Ingrese el disco que desea mover : ')
     torre_destino = input('Torre destino : ')
-    movimiento(disco, torre_destino)
+    hanoi = movimiento(disco, torre_destino)
+    
+    for fila in range(4):
+        for columna in range(3):
+            print('{:<8}'.format(hanoi[fila][columna]), end= ' ')
+        print()
+    if validacion_torre(hanoi) == 3:
+        print('GANASTES')
+        break
+
+
+
+
     
