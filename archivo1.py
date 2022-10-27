@@ -101,16 +101,18 @@ print(validacion_movimiento('MEDIO', 2, 1))
 
 #FUNCION VALIDACION DEL LLAMADO DEL DISCO (FUNCIONA) #############################################
 def validacion_llamado_disco(matriz, dict, disco):
-    if i != 1:
-        if matriz[dict[disco][0] - 1][dict[disco][1]] != 'VACIO':
-                validacion_disco = False
-        else:
-            validacion_disco = True
+    if matriz[dict[disco][0] - 1][dict[disco][1]] != 'VACIO':
+        validacion_disco = False
     else:
-        validacion_disco = True
+        if matriz[dict[disco][0] - 1][dict[disco][1]] in matriz[0]:
+            validacion_disco = True
     return validacion_disco
 
-print(validacion_llamado_disco(hanoi,ubicacion_fichas, 'MEDIO'))
+
+print('2')
+print(hanoi)
+print(ubicacion_fichas)
+print(validacion_llamado_disco(hanoi,ubicacion_fichas, 'MENOR'))
 
 ##############################################################################################
 
