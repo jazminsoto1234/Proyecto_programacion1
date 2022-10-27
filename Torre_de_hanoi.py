@@ -45,6 +45,7 @@ while True:
         for columna in range(3):
             print('{:<8}'.format(hanoi[fila][columna]), end= ' ')
         print()
+
     if validacion_torre(hanoi) == 3:
         print('GANASTES')
         break
